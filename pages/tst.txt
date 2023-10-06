@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../layout/styles/admin2.css">
+    <link rel="stylesheet" href="../layout/styles/admin.css">
+    <link rel="stylesheet" href="../layout/styles/layout.css">
+    <link rel="stylesheet" href="layout/styles/Younouss.css" type="text/css">
+    <script src="../layout/scripts/"></script>
+    <script src="../layout/scripts/"></script>
+    <script src="../layout/scripts/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <title>SMI VOYAGE ADMIN</title>
+</head>
+<body>
+<header class="hoc clear" style="background-color: #2A2D34; margin-top:40px; margin-bottom:8px "> 
+  <div id="logo" class="one_quarter first test" style="margin-bottom:0px ">
+    <p style="text-align: center"><a href="#" title="223 EVENT"><img class="logo_du_site" src="../images/demo/SMI_logo.png" alt=""  style="width:50%; margin: bottom 0px;"/></a></p>
+    <p align="center" style="margin-top:5px; color:white; font-size:10px" colo>SMI-VOYAGE</p>
+  </div>
+  <div class="three_quarter">
+    <ul class="nospace clear">
+        
+          <li class="one_third" >
+          <div class="block clear" ><a href="#"><i class="fa fa-user" ></i></a> <span><strong></strong><a data-toggle="modal" href="#editprofil" style="color:white;">Profil</a> </span></div>
+          </li>
+          <li class="one_third" >
+            <div class="block clear" ><a href="#"><i class="fa fa-user" ></i></a> <span><strong></strong><a href="connexion.php" style="color:white;">Deconnexion</a> </span></div>
+          </li> 
+
+          <!-- --------------------------------------------Edit profil-------------------------------------------------------->
+          <div id="editprofil" class="modal fade" >
+     <div class="modal-dialog">
+         <div class="modal-content">
+             <form>
+                 <div class="modal-header">						
+                     <h4 class="modal-title">Modifier la reservation</h4>
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                 </div>
+                 <div class="modal-body" >					
+                     <div class="form-group" id="ndc">
+                         <label>Nom du client</label>
+                         <input type="text" id="nom_cl" class="form-control" required name="ndc" ng-model="reservation.client">
+                     </div>
+                     <div class="form-group" id="ndc">
+                         <label>Addresse du client</label>
+                         <input type="text" id="address" class="form-control" required name="ndc" ng-model="reservation.client">
+                     </div>
+                     <div class="form-group" id="ndc">
+                         <label>Date du debut du sejou</label>
+                         <input type="date" id="start" class="form-control" required name="ndc" ng-model="reservation.start">
+                     </div>
+                     <div class="form-group" id="ndc">
+                         <label>Date de fin de sejour</label>
+                         <input type="date" id="end" class="form-control" required name="ndc" ng-model="reservation.end">
+                     </div>
+                     <div class="form-group" id="nc">
+                         <label>Type</label>
+                         <div class="form_wrap">
+                         <div class="input_wrap">
+                             <ul>
+                                 <li>
+                                     <label class="radio_wrap">
+                                         <input type="radio" id="type" value="single" class="input_radio">
+                                         <span>Single</span>
+                                     </label>
+                                 </li>
+                                 <li>				
+                                     <label class="radio_wrap">
+                                         <input type="radio" id="type" value="double" class="input_radio">
+                                         <span>Double</span>
+                                     </label>
+                                 </li>
+                                 <li>				
+                                     <label class="radio_wrap">
+                                         <input type="radio" id="type" value="family" class="input_radio">
+                                         <span>Family</span>
+                                     </label>
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+                     </div>
+                 </div>
+                 <div class="modal-footer">
+                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                     <input type="submit" class="btn btn-info" value="Save" ng-click="edit(student.$id)">
+                 </div>
+             </form>
+         </div>
+     </div>
+ </div>
+      
+    </ul>
+  </div>
+</header>
+<div id="menu" class="deuxieme" ng-app="app">
+    <div class="form_wrap">
+        <div class="input_wrap">
+            <ul>
+                <li>
+                    <label class="radio_wrap">
+                        <input type="radio" name="genre" value="Male" class="input_radio" checked>
+                        <span id="chambre">Gestion des offres</span>
+                    </label>
+                </li>
+                <li>
+                    <label class="radio_wrap">
+                        <input type="radio" name="genre" value="Male" class="input_radio">
+                        <span id="client">Gestion des Client</span>
+                    </label>
+                </li>
+                <li>				
+                    <label class="radio_wrap">
+                        <input type="radio" name="genre" value="Femelle" class="input_radio">
+                        <span id="reservation">Gestion des Reservation</span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+</div>
+
+<div class="chambre_zone" id="chambre_zone" ng-app="app" ng-controller="mainController">
+    <!--------------------------------  Chambre zone    ---------------------------------------------------->
+    <div class="container-xl">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2>Les Chambre</h2>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="#addOffres" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajouter une chambre</span></a>	
+                        </div>
+                    </div>
+                </div>	
+                <table class="table table-striped table-hover" >
+                <tr>
+                    <th>Numero de la porte</th>
+                    <th>Type</th>
+                    <th>Prix(DH)</th>
+                    <th>Occupée?</th>
+                </tr>
+                <tbody id="tbody1"></tbody>
+                </table>
+                <div id="addOffres" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form id="newChambreForm" action="index.html" class="contact-form">
+                            <div class="modal-header">						
+                                <h4 class="modal-title">Ajoutez Chambre</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body">					
+                                <div class="form-group" id="ndc">
+                                    <label>Numero de la porte</label>
+                                    <input type="number" id="nporte" ng-model="newChambre.nporte" class="form-control" required>
+                                </div>
+                                <div class="form-group" id="ndc">
+                                    <label>Type</label>
+                                    <div class="form_wrap">
+                                    <div class="input_wrap">
+                                        <ul>
+                                            <li>
+                                                <label class="radio_wrap">
+                                                    <input type="radio" id="type" value="single" class="input_radio" >
+                                                    <span>Single</span>
+                                                </label>
+                                            </li>
+                                            <li>				
+                                                <label class="radio_wrap">
+                                                    <input type="radio" id="type" value="double" class="input_radio">
+                                                    <span>Double</span>
+                                                </label>
+                                            </li>
+                                            <li>				
+                                                <label class="radio_wrap">
+                                                    <input type="radio" id="type" value="family" class="input_radio">
+                                                    <span>Family</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>		
+                                </div>
+                                <div class="form-group" id="dc">
+                                    <label>Prix(journalier)</label>
+                                    <input type="number" id="prix" ng-model="newChambre.prix"class="form-control" required name="ddc">
+                                </div>			
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                <input type="submit" class="btn btn-success" value="Add" name="addch">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            
+                <div id="editoffre" class="modal fade" >
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form>
+                                <div class="modal-header">						
+                                    <h4 class="modal-title">Modifier la reservation</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+
+
+                                <div class="modal-body">					
+                                    <div class="form-group" id="ndc">
+                                        <label>Nom du client</label>
+                                        <input type="text" id="nom_cl" class="form-control" required name="ndc" ng-model="reservation.client">
+                                    </div>
+                                    <div class="form-group" id="ndc">
+                                        <label>Addresse du client</label>
+                                        <input type="text" id="address" class="form-control" required name="ndc" ng-model="reservation.client">
+                                    </div>
+                                    <div class="form-group" id="ndc">
+                                        <label>Date du debut du sejou</label>
+                                        <input type="date" id="start" class="form-control" required name="ndc" ng-model="reservation.start">
+                                    </div>
+                                    <div class="form-group" id="ndc">
+                                        <label>Date de fin de sejour</label>
+                                        <input type="date" id="end" class="form-control" required name="ndc" ng-model="reservation.end">
+                                    </div>
+                                    <div class="form-group" id="nc">
+                                        <label>Type</label>
+                                        <div class="form_wrap">
+                                        <div class="input_wrap">
+                                            <ul>
+                                                <li>
+                                                    <label class="radio_wrap">
+                                                        <input type="radio" id="type" value="single" class="input_radio">
+                                                        <span>Single</span>
+                                                    </label>
+                                                </li>
+                                                <li>				
+                                                    <label class="radio_wrap">
+                                                        <input type="radio" id="type" value="double" class="input_radio">
+                                                        <span>Double</span>
+                                                    </label>
+                                                </li>
+                                                <li>				
+                                                    <label class="radio_wrap">
+                                                        <input type="radio" id="type" value="family" class="input_radio">
+                                                        <span>Family</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                    <input type="submit" class="btn btn-info" value="Save" ng-click="edit(student.$id)">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Delete Modal HTML -->
+                <div id="deleteoffre" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form id="delete" class="delete-user">
+                                <div class="modal-header">						
+                                    <h4 class="modal-title">Supprimer une Reservation</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">					
+                                    <p>Etes vous sure de vouloir suprimer</p>
+                                    <p class="text-warning"><small>Cette action est irremediable.</small></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                    <input type="submit" class="btn btn-danger deleteIconUI" id="deleteIconUI" value="Delete">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <section id="edit-user-module">
+                    <form>
+                        <h2>Edit user</h2> <input type="hidden" class="edit-userid"> name:<br> <input type='text' data-key='name'
+                            class='edit-user-input'><br> age:<br> <input type='text' data-key='age' class='edit-user-input'><br>
+                        email:<br> <input type='text' data-key='email' class='edit-user-input'><br> <button type='button'
+                            id="edit-user-btn">save</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="client_zone" id="client_zone" style="display: none" ng-controller="clientController">
+    <!--------------------------------  client zone    ---------------------------------------------------->
+    <div class="container-xl">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2>Les clients</h2>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="#addclient" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajoute une client</span></a>	
+                        </div>
+                    </div>
+                </div>	
+                <table class="table table-striped table-hover" >
+                <tr>
+                    <th>Nom</th>
+                    <th>Addresse</th>
+                </tr>
+                <tbody id="tbody2"></tbody>
+                </table>
+                <div id="addclient" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form name="newClientForm" id="newClientForm">
+                            <div class="modal-header">						
+                                <h4 class="modal-title">Ajoutez un client</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body">					
+                                <div class="form-group" id="ndc">
+                                    <label>Nom du client</label>
+                                    <input type="text" id="nom" ng-model="newClient.nom" class="form-control" required name="ndc">
+                                </div>
+                                <div class="form-group" id="dc">
+                                    <label>Addresse</label>
+                                    <input type="text" id="add" ng-model="newClient.add" class="form-control" required name="ddc">
+                                </div>	
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                <input type="submit" id="subcl" class="btn btn-success" value="Add" name="addcl">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+                <!-- edit -------------------------------------->
+                <div id="editEmployeeModal" class="modal fade" ng-controller="editStudent">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form>
+                                <div class="modal-header">						
+                                    <h4 class="modal-title">Modifier la reservation</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+
+
+                                <div class="modal-body" ng-controller="editStudent">					
+                                    <div class="form-group" id="ndc">
+                                        <label>Nom du client</label>
+                                        <input type="text" id="nom_cl" class="form-control" required name="ndc" ng-model="reservation.client">
+                                    </div>
+                                    <div class="form-group" id="ndc">
+                                        <label>Addresse du client</label>
+                                        <input type="text" id="address" class="form-control" required name="ndc" ng-model="reservation.client">
+                                    </div>
+                                    <div class="form-group" id="ndc">
+                                        <label>Date du debut du sejou</label>
+                                        <input type="date" id="start" class="form-control" required name="ndc" ng-model="reservation.start">
+                                    </div>
+                                    <div class="form-group" id="ndc">
+                                        <label>Date de fin de sejour</label>
+                                        <input type="date" id="end" class="form-control" required name="ndc" ng-model="reservation.end">
+                                    </div>
+                                    <div class="form-group" id="nc">
+                                        <label>Type</label>
+                                        <div class="form_wrap">
+                                        <div class="input_wrap">
+                                            <ul>
+                                                <li>
+                                                    <label class="radio_wrap">
+                                                        <input type="radio" id="type" value="single" class="input_radio">
+                                                        <span>Single</span>
+                                                    </label>
+                                                </li>
+                                                <li>				
+                                                    <label class="radio_wrap">
+                                                        <input type="radio" id="type" value="double" class="input_radio">
+                                                        <span>Double</span>
+                                                    </label>
+                                                </li>
+                                                <li>				
+                                                    <label class="radio_wrap">
+                                                        <input type="radio" id="type" value="family" class="input_radio">
+                                                        <span>Family</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                    <input type="submit" class="btn btn-info" value="Save" ng-click="edit(student.$id)">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Delete Modal HTML -->
+                <div id="deleteEmployeeModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form id="delete" class="delete-user">
+                                <div class="modal-header">						
+                                    <h4 class="modal-title">Supprimer une Reservation</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">					
+                                    <p>Etes vous sure de vouloir suprimer</p>
+                                    <p class="text-warning"><small>Cette action est irremediable.</small></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                    <input type="submit" class="btn btn-danger deleteIconUI" id="deleteIconUI" value="Delete">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div classe="reservation_zone" id="reservation_zone" style="display: none" ng-controller="reservationsController">
+    <!--------------------------------  Reservation zone    ---------------------------------------------------->
+    <div class="container-xl" ng-controller="editStudent">
+        <div class="table-responsive">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h2>Les Reservation</h2>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="#addreservation" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajoute une creservation</span></a>	
+                            </div>
+                        </div>
+                    </div>
+                	
+            <table class="table table-striped table-hover" >
+                <tr>
+                    <th>Client</th>
+                    <th>Porte</th>
+                    <th>Date de debut</th>
+                    <th>Date de fin</th>
+                    <th>Nombre de nuit</th>
+                    <th>Type</th>
+                    <th>Prix/Nuit</th>
+                    <th>Prix Total</th>
+                </tr>
+                <tbody id="tbody3"></tbody>
+            </table>
+
+            <div id="addreservation" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form method="POST" id="newReservationForm">
+                            <div class="modal-header">						
+                                <h4 class="modal-title">Ajoutez Reservation</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body">					
+                                <div class="form-group" id="ndc">
+                                    <label>Nom du client</label>
+                                    <input type="text" id="nom_cl" class="form-control" required name="ndc">
+                                </div>
+                                <div class="form-group" id="ndc">
+                                    <label>Addresse du client</label>
+                                    <input type="text" id="address" class="form-control" required name="ndc">
+                                </div>
+                                <div class="form-group" id="ndc">
+                                    <label>Date du debut du sejou</label>
+                                    <input type="date" id="start" class="form-control" required name="ndc">
+                                </div>
+                                <div class="form-group" id="ndc">
+                                    <label>Date de fin de sejour</label>
+                                    <input type="date" id="end" class="form-control" required name="ndc">
+                                </div>
+                                <div class="form-group" id="nc">
+                                    <label>Type</label>
+                                    <div class="form_wrap">
+                                    <div class="input_wrap">
+                                        <ul>
+                                            <li>
+                                                <label class="radio_wrap">
+                                                    <input type="radio" id="type" value="single" class="input_radio" checked>
+                                                    <span>Single</span>
+                                                </label>
+                                            </li>
+                                            <li>				
+                                                <label class="radio_wrap">
+                                                    <input type="radio" id="type" value="double" class="input_radio">
+                                                    <span>Double</span>
+                                                </label>
+                                            </li>
+                                            <li>				
+                                                <label class="radio_wrap">
+                                                    <input type="radio" id="type" value="family" class="input_radio">
+                                                    <span>Family</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                <input type="submit" id="subcl" class="btn btn-success" value="Add" name="add">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+                <div id="editEmployeeModal" class="modal fade" ng-controller="editStudent">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form>
+                                <div class="modal-header">						
+                                    <h4 class="modal-title">Modifier la reservation</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+
+
+                                <div class="modal-body" ng-controller="editStudent">					
+                                    <div class="form-group" id="ndc">
+                                        <label>Nom du client</label>
+                                        <input type="text" id="nom_cl" class="form-control" required name="ndc" ng-model="reservation.client">
+                                    </div>
+                                    <div class="form-group" id="ndc">
+                                        <label>Addresse du client</label>
+                                        <input type="text" id="address" class="form-control" required name="ndc" ng-model="reservation.client">
+                                    </div>
+                                    <div class="form-group" id="ndc">
+                                        <label>Date du debut du sejou</label>
+                                        <input type="date" id="start" class="form-control" required name="ndc" ng-model="reservation.start">
+                                    </div>
+                                    <div class="form-group" id="ndc">
+                                        <label>Date de fin de sejour</label>
+                                        <input type="date" id="end" class="form-control" required name="ndc" ng-model="reservation.end">
+                                    </div>
+                                    <div class="form-group" id="nc">
+                                        <label>Type</label>
+                                        <div class="form_wrap">
+                                        <div class="input_wrap">
+                                            <ul>
+                                                <li>
+                                                    <label class="radio_wrap">
+                                                        <input type="radio" id="type" value="single" class="input_radio">
+                                                        <span>Single</span>
+                                                    </label>
+                                                </li>
+                                                <li>				
+                                                    <label class="radio_wrap">
+                                                        <input type="radio" id="type" value="double" class="input_radio">
+                                                        <span>Double</span>
+                                                    </label>
+                                                </li>
+                                                <li>				
+                                                    <label class="radio_wrap">
+                                                        <input type="radio" id="type" value="family" class="input_radio">
+                                                        <span>Family</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                    <input type="submit" class="btn btn-info" value="Save" ng-click="edit(student.$id)">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Delete Modal HTML -->
+                <div id="deleteEmployeeModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form id="delete" class="delete-user">
+                                <div class="modal-header">						
+                                    <h4 class="modal-title">Supprimer une Reservation</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">					
+                                    <p>Etes vous sure de vouloir suprimer</p>
+                                    <p class="text-warning"><small>Cette action est irremediable.</small></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                    <input type="submit" class="btn btn-danger deleteIconUI" id="deleteIconUI" value="Delete">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+<script>
+    $('#chambre').on('click', function(){
+    $('#chambre_zone').show();
+    $('#reservation_zone').hide();
+    $('#client_zone').hide();
+   
+});
+$('#reservation').on('click', function(){
+    $('#reservation_zone').show();
+    $('#chambre_zone').hide();
+    $('#client_zone').hide();
+});
+$('#client').on('click', function(){
+    $('#reservation_zone').hide();
+    $('#chambre_zone').hide();
+    $('#client_zone').show();
+});
+
+$(document).ready(function(){
+    $("#subcl").click(function(){location.reload(true);});
+})
+
+
+
+</script>
+</html>

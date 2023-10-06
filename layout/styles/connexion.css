@@ -1,0 +1,123 @@
+@charset "utf-8";
+@import url("fontawesome-free/css/all.css");
+@font-face{
+	font-family: Base_02;
+	src: url("fontawesome-free/webfonts/base_02.ttf");
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color:green;
+}
+
+.cercle{ 
+    position:absolute;
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+
+    background: linear-gradient(90deg, rgb(120, 194, 98), rgb(128, 255, 249));
+}
+.cercle1{
+    left: 20%;
+    top:20%;  
+    animation: anim1 10s infinite linear;
+}
+.cercle2{
+    right: 20%;
+    top:40%;  
+    animation: anim2 10s infinite linear;
+}
+.main_zone{
+    position: fixed;
+    top:10%;
+    right:30%;
+    z-index: 99;
+    margin:auto;
+    background-color: rgba(207, 203, 203, 0.295);
+    backdrop-filter: blur(3px);
+    width:500px;
+    height:500px;
+    border-radius: 30px;
+}
+.connexion_text{
+    text-align: center;
+    font-family: Base_02;
+    letter-spacing: 5px;
+}
+.connexion_form_zone{
+    align-items: center;
+    margin:auto;
+    border: 1px solid grey;
+    width:90%;
+    border-radius: 15px;
+    margin-top: 50px;
+    box-shadow: 5px 5px 15px 1px rgb(22, 22, 22);
+}
+input{
+    width:90%;
+    height:30px;
+    margin-left:5%;
+    border-radius: 10px;
+    border: 2px solid grey;
+    background-color: transparent;
+    font-size: 18px;
+}
+button{
+    margin-top:5%;
+    margin-bottom:5%;
+    padding: 10px;
+    border-radius: 10px;
+    border:1px solid grey;
+    
+    font-size: 20px;
+}
+button:hover{
+    color:green;
+    border-color: green;
+    cursor: pointer;
+}
+.inscription_text:hover{
+    color:green;
+    cursor: pointer;
+}
+h6{
+    color:green;
+}
+@media (min-width=1000px) {
+    h6{
+        color:red;
+    }
+}
+@keyframes anim1 {
+    50%{
+        margin-left: 8%;
+    }
+    100%{
+        margin-left: 0px;
+    }
+}
+@keyframes anim2 {
+    50%{
+        margin-right: 10%;
+    }
+    100%{
+        margin-left: 0px;
+    }
+}
+@media screen and (max-width:600px) {
+    .main_zone{
+        width:100%;
+        position: initial;
+    }
+    .cercle{
+        display:none;
+    }
+    h1{
+        font-size: larger;
+    }
+    
+}

@@ -1,0 +1,166 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+marquee{
+    font-size: 18px;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0px;
+    background-color: rgba(255, 255, 255, 0.445);
+    padding-top: 10px;
+    backdrop-filter: blur(2px);
+}
+.main_zone{
+    margin-left:100px;
+    margin-right:100px;
+}
+.main_zone nav{
+    z-index: 9999;
+    background-color: rgba(255, 0, 0, 0.645);
+    backdrop-filter: blur(3px);
+    display: flex;
+    position:fixed;
+    top:0px;
+    left:150px;
+    right:150px;
+    border-radius: 10px;
+    border:2px solid rgb(0, 110, 255);
+
+}
+.menu_point_zone{
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 30px;
+    border:1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.menu_point_zone>span{
+    background-color: rgb(255, 255, 255);
+    margin:6px;
+    width:30px;
+    height:3px;
+    display: block;
+    border-radius: 3px;
+}
+.menu_zone{
+    position: fixed;
+    top:60px;
+    right:-30px;
+    background-color: rgba(255, 255, 255, 0.932);
+    backdrop-filter: blur(50%);
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 15px;
+    border:2px solid rgb(0, 110, 255);
+    display: none;
+}
+.search_zone{
+    height:150px;
+    width:100%;
+    margin-top: 70px;
+    border:2px solid rgb(0, 110, 255);
+    border-radius: 15px;
+    background-image: url('../../images/IMG_4551.jpg');
+    background-size: cover;
+    background-position-y:-200px ;
+}
+.search_form{
+    display: flex;
+    margin-top: 135px;
+    margin-left: 30px;
+    margin-right: 30px;
+    justify-content: space-evenly;
+}
+.search_form>input{
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 110, 255);
+    padding: 5px;
+}
+.search_form>button{
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 110, 255);
+    background-color: rgba(255, 255, 255, 0.432);
+    backdrop-filter: blur(5px);
+}
+.search_form>button:hover{
+    background-color: rgb(255, 97, 97);
+    color:white;
+}
+.promotion_zone{
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-around;
+    border: 2px solid rgb(0, 110, 255);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 15px;
+    background-image: url('../../images/IMG_4557.WEBP');
+    background-size: cover;
+}
+.card_zone{
+    width:25%;
+    padding:2%;
+    border: 1px solid;
+    border-radius: 15px;
+    box-shadow: 10px 10px 15px grey;
+    background-color: rgba(255, 255, 255, 0.438);
+    backdrop-filter: blur(3px);
+}
+.card_zone>img{
+    width:100%; border-radius: 15px;
+}
+.consultation_btn{
+    padding: calc(+10px);
+    border-radius: 15px;
+    border: none;
+    background-color: #435d7d;
+    font-weight: bold;
+    color:white;
+    font-size: 50px;
+}
+.consultation_btn:hover{
+    color:rgb(0, 110, 255);
+    background-color: white;
+    border:1px solid rgb(0, 110, 255);
+}
+.name_des{
+    border-radius: 9px;
+}
+#logo *{margin:0; padding:0; line-height:1;}
+#logo h1{font-size:25px;}
+#logo p{font-size:.3rem;}
+.logo_du_site{
+    width:20%;
+    margin-bottom:8px;
+    border-radius:10px;
+    box-shadow: 2.5px 2.5px 5px;
+    
+
+}
+.princip{
+    height:330px;
+    width:100%;
+    margin-top: 0px;
+    border:2px solid rgb(0, 110, 255);
+    border-radius: 15px;
+    background-image: url('https://static11.com-hotel.com/uploads/hotel/317618/photo/hotel-farah-tanger_159707167737.jpg');
+    background-size: cover;
+    background-position-y:-200px ;
+}
+.btn_zone{
+    text-align: center;
+    
+    
+}
+.btn_zone2{
+    text-align: center;
+   
+   
+}
